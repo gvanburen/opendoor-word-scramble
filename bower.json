@@ -1,0 +1,16 @@
+{
+  "name": "wordScramble",
+  "version": "0.0.1",
+  "authors": [
+    "Greg Van Buren <g.vanburen@gmail.com>"
+  ],
+  "description": "open door project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
