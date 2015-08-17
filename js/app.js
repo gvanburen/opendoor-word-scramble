@@ -39,10 +39,12 @@ angular.module('wordScramble',['ngAnimate'])
       $scope.check = function(event){
         if (event.keyCode === 8){//backspace
           event.preventDefault();
-          lastGuess = $scope.guess[$scope.guess.length-1];
-          $scope.scrambledWord.push(lastGuess);
-          //remove last user input
-          $scope.guess = $scope.guess.slice(0,-1);
+          if($scope.guess.length > 0){
+            lastGuess = $scope.guess[$scope.guess.length-1];
+            $scope.scrambledWord.push(lastGuess);
+            //remove last user input
+            $scope.guess = $scope.guess.slice(0,-1);
+          }
         } else {
           if(!event.metaKey){
             userGuess = String.fromCharCode(event.keyCode);
