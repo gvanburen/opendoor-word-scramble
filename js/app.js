@@ -75,8 +75,9 @@ angular.module('wordScramble',['ngAnimate'])
             //check input word to see if it's a valid word
             wordFactory.checkDictionary(one).then(function(data){
               var test = JSON.stringify(data);
-              var res = Object.keys(test)[0];
-              if(res > 1){
+              test = JSON.parse(test);
+              var res = test["totalResults"];
+              if(res > 0){
                 count++;
                 $scope.count = count;
                 init();
