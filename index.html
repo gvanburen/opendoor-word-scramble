@@ -1,26 +1,29 @@
 <!doctype html>
 <html lang="en" ng-app="wordScramble">
 <head>
-	<meta charset="UTF-8">
-	<title>wordScramble</title>
-  <link rel="stylesheet" href="css/word.css" charset="utf-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>wordScramble</title>
+    <link rel="stylesheet" href="css/word.css" charset="utf-8">
 </head>
 <body ng-controller="wordCtrl" ng-keydown="check($event)">
     <section class="container">
-      <div class="container-items letters-guess ng-cloak" ng-repeat="letter in guess track by $index">
+        <div class="container-items letters-guess ng-cloak" ng-repeat="letter in guess track by $index">
         {{ letter }}
-      </div>
-      <div class="container-items letters ng-cloak" ng-repeat="letter in scrambledWord track by $index">
+        </div>
+        <div id="letter" class="container-items letters ng-cloak" ng-repeat="letter in scrambledWord track by $index">
         {{ letter }}
-      </div>
+        </div>
     </section>
     <div class="point ng-cloak">
-      <h4>{{ count }} <span ng-show="count == 0 || count > 1">points</span><span ng-show="count == 1">point</span></h4>
+        <h4>{{ count }} <span ng-show="count == 0 || count > 1">points</span><span ng-show="count == 1">point</span></h4>
     </div>
 
-<script src="libs/angular/angular.js" charset="utf-8"></script>
-<script src="libs/angular-animate/angular-animate.js" charset="utf-8"></script>
-<script src="js/app.js" charset="utf-8"></script>
-<script src="js/wordFactory.js" charset="utf-8"></script>
+    <script src="libs/angular/angular.js" charset="utf-8"></script>
+    <script src="libs/angular-animate/angular-animate.js" charset="utf-8"></script>
+    <script src="libs/angular-touch/angular-touch.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/wordFactory.js" charset="utf-8"></script>
 </body>
 </html>
